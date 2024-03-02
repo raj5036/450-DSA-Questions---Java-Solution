@@ -5,7 +5,7 @@ import java.io.*;
 
 class GFG {
 	static void rearrange(int arr[], int n) {
-		int j = 0, temp;
+		int j = 0, temp; // J Index will hold negative values
 		for (int i = 0; i < n; i++) {
 			if (arr[i] < 0) {
 				if (i != j) {

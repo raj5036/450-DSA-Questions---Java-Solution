@@ -43,14 +43,14 @@ class BinaryTree {
 			Pair it = q.remove();
 			int hd = it.hd;
 			TreeNode temp = it.node;
+
 			if (map.get(hd) == null)
 				map.put(hd, temp.data);
-			if (temp.left != null) {
 
+			if (temp.left != null) {
 				q.add(new Pair(temp.left, hd - 1));
 			}
 			if (temp.right != null) {
-
 				q.add(new Pair(temp.right, hd + 1));
 			}
 		}

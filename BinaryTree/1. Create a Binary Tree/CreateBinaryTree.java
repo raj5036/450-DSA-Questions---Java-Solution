@@ -22,7 +22,7 @@ class BinaryTree {
 
 public class CreateBinaryTree {
 	public static void main(String[] args) {
-		BinaryTree binaryTree = new BinaryTree();
+		BinaryTree tree = new BinaryTree();
 		tree.root = new Node(1);
 		/*
 		 * Following is the tree after above statement

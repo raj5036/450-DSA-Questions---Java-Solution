@@ -1,8 +1,3 @@
-
-// Java program to print largest contiguous array sum
-import java.io.*;
-import java.util.*;
-
 class Kadane {
 	// Driver Code
 	public static void main(String[] args) {
