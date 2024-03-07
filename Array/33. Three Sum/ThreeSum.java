@@ -31,10 +31,10 @@ public class ThreeSum {
 				if (hashMap.containsKey(required) && hashMap.get(required) > j) {
 					answer.add(Arrays.asList(nums[i], nums[j], required));
 				}
-				j = hashMap.get(nums[j]);
+				j = hashMap.get(nums[j]); // to avoid duplicates
 			}
 
-			i = hashMap.get(nums[i]);
+			i = hashMap.get(nums[i]); // to avoid duplicates
 		}
 
 		return answer;
