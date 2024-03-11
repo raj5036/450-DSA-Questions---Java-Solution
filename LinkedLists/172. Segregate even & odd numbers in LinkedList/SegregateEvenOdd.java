@@ -35,9 +35,9 @@ class LinkedList {
 }
 
 public class SegregateEvenOdd {
-	public static void main (String[] args) {
+	public static void main(String[] args) {
 		LinkedList linkedList = new LinkedList();
 		linkedList.insert(17);
-		
+
 	}
 }
