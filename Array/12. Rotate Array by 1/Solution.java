@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Solution {
 	public void rotate(int arr[], int n) { // GFG Accepted solution
 		int lastEle = arr[n - 1];
@@ -5,6 +7,7 @@ public class Solution {
 			arr[i] = arr[i - 1];
 		}
 		arr[0] = lastEle;
+		// Comparator.comparing(/)
 	}
 
 	public static void main(String[] args) {
