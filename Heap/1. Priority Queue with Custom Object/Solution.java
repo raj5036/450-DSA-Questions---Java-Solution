@@ -52,5 +52,11 @@ public class Solution {
 		pq2.add(p3);
 
 		printPQ(pq2);
+
+		/*
+		 * Creating a Priority Queue with a custom comparator for max heap
+		 * PriorityQueue<Integer> maxHeap = new
+		 * PriorityQueue<>(Comparator.reverseOrder());
+		 */
 	}
 }
