@@ -1,5 +1,10 @@
 // Java implementation of search and insert operations
 // on Trie
+/*
+ * Operation	Time Complexity	Auxiliary Space
+ * Insertion		O(n)			O(n*m)
+ * Searching		O(n)			O(1)
+ */
 public class Trie {
 
 	// Alphabet size (# of symbols)
