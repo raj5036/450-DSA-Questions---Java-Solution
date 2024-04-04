@@ -38,6 +38,7 @@ public class Solution {
 		Person p3 = new Person("Ally", 11);
 
 		// Compare using age
+		System.out.println("Comparing with Age");
 		PriorityQueue<Person> pq1 = new PriorityQueue<>(Comparator.comparing(Person::getAge));
 		pq1.add(p1);
 		pq1.add(p2);
@@ -46,6 +47,7 @@ public class Solution {
 		printPQ(pq1);
 
 		// Compare using name
+		System.out.println("Comparing with Name");
 		PriorityQueue<Person> pq2 = new PriorityQueue<>(Comparator.comparing(Person::getName));
 		pq2.add(p1);
 		pq2.add(p2);
@@ -58,5 +60,12 @@ public class Solution {
 		 * PriorityQueue<Integer> maxHeap = new
 		 * PriorityQueue<>(Comparator.reverseOrder());
 		 */
+		System.out.println("Reversed Order with Age");
+		PriorityQueue<Person> pq3 = new PriorityQueue<>(Comparator.comparing(Person::getAge).reversed());
+		pq3.add(p1);
+		pq3.add(p2);
+		pq3.add(p3);
+
+		printPQ(pq3);
 	}
 }
