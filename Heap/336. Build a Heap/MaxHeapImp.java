@@ -8,12 +8,12 @@ class PriorityQueue {
 
 	// constructor: use the default initial capacity of a vector
 	public PriorityQueue() {
-		A = new Vector();
+		A = new Vector<Integer>();
 	}
 
 	// constructor: set a custom initial capacity for vector
 	public PriorityQueue(int capacity) {
-		A = new Vector(capacity);
+		A = new Vector<Integer>(capacity);
 	}
 
 	// return parent of `A[i]`
