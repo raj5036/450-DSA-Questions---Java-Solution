@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Solution {
 	static void swap(int[] arr, int i, int j) {
 		int temp = arr[i];
@@ -24,6 +26,8 @@ public class Solution {
 	}
 
 	public static void main(String[] args) {
-
+		int[] array = { 2, 0, 2 };
+		sort012(array, array.length);
+		System.out.println(Arrays.toString(array));
 	}
 }
