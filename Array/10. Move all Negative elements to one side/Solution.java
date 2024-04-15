@@ -33,5 +33,3 @@ class GFG {
 		printArray(arr, n);
 	}
 }
-
-// This code is contributed by Nikita Tiwari.
