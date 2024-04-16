@@ -3,6 +3,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+class Node {
+	int data;
+	Node left, right;
+
+	Node(int data) {
+		this.data = data;
+		this.left = this.right = null;
+	}
+}
+
 public class ReverseLevelOrder {
 	public ArrayList<Integer> reverseLevelOrder(Node root) {
 		// code here

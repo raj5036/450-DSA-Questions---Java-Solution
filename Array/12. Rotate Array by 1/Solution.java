@@ -7,7 +7,6 @@ public class Solution {
 			arr[i] = arr[i - 1];
 		}
 		arr[0] = lastEle;
-		// Comparator.comparing(/)
 	}
 
 	public static void main(String[] args) {
