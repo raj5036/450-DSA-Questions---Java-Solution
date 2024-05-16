@@ -1,0 +1,6 @@
+Algorithm	   Best		  Average		worst		Space Complexity
+________________________________________________________________________
+
+Heap Sort	O(n log(n))	O(n log(n))	  O(n log(n))			O(1)
+Quick Sort	O(n log(n))	O(n log(n))	  O(n2)				O(n)
+Merge Sort	O(n log(n))	O(n log(n))	  O(n log(n))			O(n)
