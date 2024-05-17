@@ -13,7 +13,7 @@ public class Solution {
 		}
 
 		map.forEach((k, v) -> {
-			if (map.get(k) > 1) {
+			if (v > 1) {
 				System.out.println(k + "->" + v);
 			}
 		});
