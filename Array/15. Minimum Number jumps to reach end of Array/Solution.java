@@ -1,6 +1,6 @@
 /*
  * 	1. If n==1 then return 0, Because in the question given that initially, we are at first index that means no need to jump if n==1. 
-	2. If arr[0]==0 the return -1, As if the value of first index is zero that means we can't make any jump from the start.
+	2. If arr[0]==0 then return -1, As if the value of first index is zero that means we can't make any jump from the start.
 	3. Initialize 3 variables
 		maxrange=arr[0]: The variable maxrange stores at all times the maximal reachable index in the array.
 		jump = 1: stores the number of jumps necessary to reach the maximal reachable position. It also indicates the current jump we are making in the array.
