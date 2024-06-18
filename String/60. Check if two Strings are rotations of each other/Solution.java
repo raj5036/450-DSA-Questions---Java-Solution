@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Solution {
+public class Solution { // LeetCode accepted solution
 	String rotateStringOnce(String s) {
 		char[] str = s.toCharArray();
 
