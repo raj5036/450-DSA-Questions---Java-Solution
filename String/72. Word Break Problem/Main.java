@@ -33,9 +33,9 @@ public class Main {
 				"mango", "icecream", "and", "go", "i", "like",
 				"ice", "cream");
 
-		boolean result = wordBreak(wordList, "ilikesamsung");
+		boolean result = wordBreak(wordList, "likesamsung");
 
-		System.out.println(result); // Output: true
+		System.out.println(result + " ."); // Output: true
 	}
 }
 
