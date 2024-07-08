@@ -38,7 +38,7 @@ class Graph {
 	 */
 	void BFS(int src) {
 		System.out.println("BFS: ");
-		Queue<Integer> queue = new LinkedList();
+		Queue<Integer> queue = new LinkedList<>();
 		Boolean[] visited = new Boolean[this.V];
 		Arrays.fill(visited, false);
 
