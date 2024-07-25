@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class Solution {
 	public void rotate(int arr[], int n) { // GFG Accepted solution
 		int lastEle = arr[n - 1];

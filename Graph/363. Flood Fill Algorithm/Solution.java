@@ -24,7 +24,6 @@ public class Solution {
 		if (isInBound(row, col + 1, M, N) && image[row][col + 1] == startColor) { // Right
 			floodFillUtil(image, row, col + 1, M, N, startColor, targetColor);
 		}
-		return;
 	}
 
 	public int[][] floodFill(int[][] image, int sr, int sc, int targetColor) {
