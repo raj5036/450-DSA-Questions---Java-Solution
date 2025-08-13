@@ -26,7 +26,7 @@ public class Solution {
 	static void buildMaxHeap(int[] array, int n) {
 		int startIndex = (n / 2) - 1;
 		for (int i = startIndex; i >= 0; i--) {
-			heapify(array, startIndex, i);
+			heapify(array, n, i);
 		}
 	}
 

@@ -1,63 +1,84 @@
-/* 
- * First, we define the base cases for our function.
- * If the sum is equal to 0, return 1 (i.e. a valid combination of coins is found).
- * If the sum is less than 0 or the number of coins (i.e. N) is less than or equal to 0, return 0 (i.e. no valid 
- * combination of coins is possible).
- * If we take the coin then we make a recursive call and in the parameters, the array size remains the same, and 
- * the sum is decreased by coins[N-1] and stored inside a variable "take".
- * If we don't take the coin then we make a recursive call and in the parameters, we decrease the array size 
- * by 1(i.e. N-1) and the sum remains the same and we store it inside a variable notake.
- * Return the sum of take and notake (i.e. take + notake). 
- */
+// Java program to find minimum of coins
+// to make a given change sum
 
-import java.util.Arrays;
+import java.util.*;
 
-public class Solution {
-	long count(int[] coins, int N, int sum) {
-		if (sum == 0) {
-			return 1;
-		}
+class GfG {
 
-		if (sum < 0 || N <= 0) {
+	static int minCoinsRecur(int i, int sum, int[] coins) {
+		// base case
+		if (sum == 0)
 			return 0;
-		}
 
-		long take = count(coins, N, sum - coins[N - 1]);
-		long noTake = count(coins, N - 1, sum);
-		return take + noTake;
+		if (sum < 0 || i == coins.length)
+			return Integer.MAX_VALUE;
+
+		int take = Integer.MAX_VALUE;
+
+		// take a coin only if its value
+		// is greater than 0. (edge-case)
+		if (coins[i] > 0) {
+			take = minCoinsRecur(i, sum - coins[i], coins);
+			if (take != Integer.MAX_VALUE)
+				take++;
+		}
+		// not taking the coins
+		int noTake = minCoinsRecur(i + 1, sum, coins);
+
+		return Math.min(take, noTake);
 	}
 
-	long countDP(int[] coins, int N, int sum) {
-		long[][] dp = new long[N + 1][sum + 1];
-
-		for (long[] row : dp) {
-			Arrays.fill(row, 0);
-		}
-
-		return countMemo(coins, N, sum, dp);
-	}
-
-	long countMemo(int[] coins, int N, int sum, long[][] dp) {
-		if (sum == 0) {
-			return 1;
-		}
-
-		if (sum < 0 || N <= 0) {
-			return 0;
-		}
-
-		if (dp[N][sum] != 0) {
-			return dp[N][sum];
-		}
-
-		long take = countMemo(coins, N, sum - coins[N - 1], dp);
-		long noTake = countMemo(coins, N - 1, sum, dp);
-
-		dp[N][sum] = take + noTake;
-		return take + noTake;
+	static int minCoins(int[] coins, int sum) {
+		int ans = minCoinsRecur(0, sum, coins);
+		return ans != Integer.MAX_VALUE ? ans : -1;
 	}
 
 	public static void main(String[] args) {
+		int[] coins = { 9, 6, 5, 1 };
+		int sum = 19;
+		System.out.println(minCoins(coins, sum));
+	}
+}
 
+// DP
+class Memo {
+	static int minCoinsRecur(int i, int sum, int[] coins, int[][] memo) {
+
+		// base case
+		if (sum == 0)
+			return 0;
+		if (sum < 0 || i == coins.length)
+			return Integer.MAX_VALUE;
+
+		if (memo[i][sum] != -1)
+			return memo[i][sum];
+
+		int take = Integer.MAX_VALUE;
+
+		// take a coin only if its value
+		// is greater than 0.
+		if (coins[i] > 0) {
+			take = minCoinsRecur(i, sum - coins[i], coins, memo);
+			if (take != Integer.MAX_VALUE)
+				take++;
+		}
+		// not take the coin
+		int noTake = minCoinsRecur(i + 1, sum, coins, memo);
+
+		return memo[i][sum] = Math.min(take, noTake);
+	}
+
+	static int minCoins(int[] coins, int sum) {
+		int[][] memo = new int[coins.length][sum + 1];
+		for (int[] row : memo)
+			Arrays.fill(row, -1);
+		int ans = minCoinsRecur(0, sum, coins, memo);
+		return ans != Integer.MAX_VALUE ? ans : -1;
+	}
+
+	public static void main(String[] args) {
+		int[] coins = { 9, 6, 5, 1 };
+		int sum = 19;
+		System.out.println(minCoins(coins, sum));
 	}
 }
