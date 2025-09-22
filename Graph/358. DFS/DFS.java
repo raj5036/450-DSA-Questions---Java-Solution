@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 
 @SuppressWarnings("unchecked")
 class Graph {
@@ -25,6 +23,7 @@ class Graph {
 		for (int v = 0; v < this.V; v++) {
 			ArrayList<Integer> adjacentNodes = adjList[v];
 			System.out.println(v + "->");
+
 			for (Integer adjacentNode : adjacentNodes) {
 				System.out.print(adjacentNode + ", ");
 			}

@@ -27,6 +27,7 @@ class Graph {
 			for (Integer currentNode : list) {
 				System.out.println(currentNode + ", ");
 			}
+
 			Iterator<Integer> it = adjList[i].iterator();
 			while (it.hasNext()) {
 				int currentNode = it.next();
