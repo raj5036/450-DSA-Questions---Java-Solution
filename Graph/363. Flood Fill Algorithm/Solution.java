@@ -21,6 +21,5 @@ class Solution {
 	public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
 		util(image, sr, sc, image[sr][sc], newColor);
 		return image;
-
 	}
 }
