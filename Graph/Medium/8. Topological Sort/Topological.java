@@ -11,6 +11,10 @@ public class Topological {
 		}
 		// Push the node after visiting
 		// all its neighbors
+		/*
+		 * 💡 Intuition:
+		 * Think of this as "finish the sub-tasks first, then add the main task."
+		 */
 		st.push(node);
 	}
 

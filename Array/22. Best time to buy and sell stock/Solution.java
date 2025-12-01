@@ -7,6 +7,7 @@ class Solution {
 				if (buyingPrice > sellingPrice) {
 					continue;
 				}
+
 				maxProfit = Integer.max(maxProfit, sellingPrice - buyingPrice);
 			}
 		}
@@ -18,7 +19,7 @@ class Solution {
 		int profit = 0;
 
 		for (int i = 1; i < prices.length; i++) {
-			if (buyPrice > prices[i]) {
+			if (prices[i] < buyPrice) {
 				buyPrice = prices[i];
 			}
 
