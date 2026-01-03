@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/dsa/reverse-a-linked-list/
 class Node {
 	int data;
 	Node next;
