@@ -1,73 +1,85 @@
-import java.util.*;
+class Node {
+	int data;
+	Node next;
 
-class PriorityQueue {
-	Vector<Integer> v;
-
-	PriorityQueue() {
-		v = new Vector<Integer>();
+	Node(int data) {
+		this.data = data;
+		this.next = null;
 	}
+}
 
-	PriorityQueue(int capacity) {
-		v = new Vector<Integer>(capacity);
-	}
+class LinkedList {
+	Node head;
 
-	int parent(int i) {
-		if (i == 0) {
-			return i;
-		}
+	void append(int data) {
+		if (head == null) {
+			head = new Node(data);
+		} else {
+			Node lastNode = head;
+			while (lastNode.next != null) {
+				lastNode = lastNode.next;
+			}
 
-		return (i - 1) / 2;
-	}
-
-	int left(int i) {
-		return 2 * i + 1;
-	}
-
-	int right(int i) {
-		return 2 * i + 2;
-	}
-
-	int size() {
-		return v.size();
-	}
-
-	void swap(int i, int j) {
-		int temp = v.get(i);
-		v.setElementAt(v.get(j), i);
-		v.setElementAt(temp, j);
-	}
-
-	void heapify_down(int i) {
-		int largest = i;
-		int left = left(i);
-		int right = right(i);
-
-		if (left < size() && v.get(i) < v.get(left)) {
-			largest = left;
-		} else if (right < size() && v.get(i) < v.get(right)) {
-			largest = right;
-		}
-
-		if (largest != i) {
-			swap(i, largest);
-
-			heapify_down(largest);
+			lastNode.next = new Node(data);
 		}
 	}
 
-	void add(int num) {
+	void remove(int data) {
+		if (head == null) {
+			System.out.println("Nothing to remove");
+		} else if (head.data == data) {
+			head = head.next;
+		} else {
+			Node current = head;
+			while (current != null) {
+				if (current.next != null && current.next.data == data) {
+					current.next = current.next.next;
+					break;
+				}
+				current = current.next;
+			}
 
+			if (current == null) {
+				System.out.println("Node not found");
+			}
+		}
+	}
+
+	void reverse() {
+		Node current = head, prev = null, next = null;
+
+		while (current != null) {
+			next = current.next;
+			current.next = prev;
+
+			prev = current;
+			current = next;
+		}
+
+		this.head = prev;
+	}
+
+	void print() {
+		Node current = head;
+		while (current != null) {
+			System.out.print(current.data + "->");
+			current = current.next;
+		}
+		System.out.print("null\n");
 	}
 }
 
 public class Test {
 	public static void main(String[] args) {
 		System.out.println("Hi");
-		PriorityQueue pq = new PriorityQueue();
+		LinkedList ll = new LinkedList();
+		ll.append(0);
+		ll.append(1);
+		ll.append(2);
+		ll.append(3);
+		ll.print();
 
-		int[] nums = { 2, 3, 1, 23, 21, 11, 8 };
-		for (int num : nums) {
-
-		}
+		ll.reverse();
+		ll.print();
 	}
 }

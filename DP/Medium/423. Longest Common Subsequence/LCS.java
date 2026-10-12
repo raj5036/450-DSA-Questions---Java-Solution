@@ -14,7 +14,7 @@ public class LCS {
 
 		// otherwise, if the last character of `X` and `Y` don't match
 		return Math.max(LCSLength(X, Y, m, n - 1),
-				LCSLength(X, Y, m - 1, n))
+				LCSLength(X, Y, m - 1, n));
 	}
 
 	public static int LCSLength(String X, String Y) {

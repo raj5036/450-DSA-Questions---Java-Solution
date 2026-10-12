@@ -3,7 +3,7 @@
 // permutations of a string
 import java.util.*;
 
-class GfG {
+public class Solutions {
 
 	// Recursive function to generate
 	// all permutations of string s
