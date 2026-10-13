@@ -21,7 +21,5 @@ public class StackBottom {
 		System.out.println(stack);
 		insertAtBottom(stack, 6);
 		System.out.println(stack);
-
-		Stack
 	}
 }

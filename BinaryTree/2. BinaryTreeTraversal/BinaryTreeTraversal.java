@@ -42,7 +42,7 @@ class BinaryTree {
 			return;
 		}
 		postOrderTraversal(treeNode.left);
-		preOrderTraversal(treeNode.right);
+		postOrderTraversal(treeNode.right);
 		System.out.print(treeNode.data + " ");
 	}
 }

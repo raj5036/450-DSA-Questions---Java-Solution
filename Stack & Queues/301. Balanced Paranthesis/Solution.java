@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Solution {
 	boolean validPair(char exp1, char exp2) {
 		return (exp1 == '(' && exp2 == ')') || (exp1 == '{' && exp2 == '}') || (exp1 == '[' && exp2 == ']');
